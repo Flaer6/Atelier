@@ -81,13 +81,14 @@ li {
   }
   &__mobile {
     position: absolute;
-    transform: translateX(-100%);
+    transform: translateX(-200%);
     &-list {
-      display: none;
+      transform: translateX(-100%);
     }
   }
   &__btn {
-    display: none;
+    background-color: transparent;
+    border: none;
   }
 }
 
@@ -338,7 +339,8 @@ li {
       margin-left: 30px;
     }
     &__link-buy {
-      padding: 10px 20px;
+      padding: 10px 15px;
+      font-size: 10px;
     }
   }
 }
@@ -354,11 +356,8 @@ li {
     }
     &__btn {
       position: relative;
-      display: flex;
       flex-direction: column;
       order: -1;
-      background-color: transparent;
-      border: none;
       height: 40px;
       width: 50px;
       cursor: pointer;
@@ -409,7 +408,7 @@ li {
       bottom: 0;
       left: 0;
       right: 50%;
-      background-color: #000;
+      background-color: rgba(0, 0, 0, 0.9);
       ul {
         display: block;
         transform: inherit;
@@ -427,6 +426,15 @@ li {
           padding: 10px;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .menu {
+    &__link-buy {
+      padding: 5px 10px;
+      font-size: 9px;
     }
   }
 }
