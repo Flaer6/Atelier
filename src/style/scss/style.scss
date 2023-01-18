@@ -81,7 +81,10 @@ li {
   }
   &__mobile {
     position: absolute;
-    left: -100%;
+    transform: translateX(-100%);
+    &-list {
+      display: none;
+    }
   }
   &__btn {
     display: none;
@@ -367,7 +370,7 @@ li {
         height: 2px;
         width: 100%;
         background-color: $title-color;
-        transition: all .3s;
+        transition: .5s ease;
       }
       span:nth-child(1) {
         top: 0;
@@ -398,14 +401,20 @@ li {
     }
     &__mobile.menu--open {
       display: flex;
+      transform: translateX(0);
       flex-direction: column;
       position: absolute;
-      transition: all .5s;
+      transition: .5s ease;
       top: 0;
       bottom: 0;
       left: 0;
       right: 50%;
       background-color: #000;
+      ul {
+        display: block;
+        transform: inherit;
+        transition: inherit;
+      }
     }
     &__mobile-list {
       position: absolute;
