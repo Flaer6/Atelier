@@ -79,6 +79,7 @@ li {
     border: 1px solid $title-color;
     margin: 14px 0;
   }
+  //Меню для мобильных устройств
   &__mobile {
     position: absolute;
     transform: translateX(-200%);
@@ -102,7 +103,6 @@ li {
   min-height: 100vh;
   &__subtitle {
     text-transform: uppercase;
-    line-height: 22px;
     letter-spacing: 2px;
   }
   &__title {
@@ -124,7 +124,9 @@ li {
 
 .pages {
   &__inner {
+    display: grid;
     text-align: center;
+    justify-content: center;
     padding: 120px 0;
   }
   &__subtitle {
@@ -156,6 +158,7 @@ li {
   &__inner {
     padding-top: 120px;
     text-align: center;
+    justify-content: center;
   }
   &__subtitle {
     @extend %subtitle;
@@ -218,12 +221,10 @@ li {
     padding-top: 40px;
   }
   &__title {
-    font-size: 40px;
-    line-height: 50px;
-    z-index: 30;
+    font-size: 30px;
   }
   &__inst-link {
-    margin-top: 40px;
+    margin-top: 10px;
     padding: 14px 24px;
     background-color: $title-color;
     color: $bg-color;
@@ -234,13 +235,20 @@ li {
     max-width: 122px;
   }
   &__img {
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 50px;
+      left: 15px;
+    }
     &-logo {
       position: absolute;
       top: -35px;
       left: 90px;
       &-mid {
-        position: absolute;
-        top: 40px;
+        position: relative;
         width: 200px;
         height: 200px;
       }
@@ -333,6 +341,56 @@ li {
   }
 }
 
+
+@media(max-width: 1125px) {
+  .pages {
+    &__img-column {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .contacts {
+    &__links {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__mid {
+      padding-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 1075px) {
+  .services {
+    &__img {
+      padding: 31px;
+    }
+    &__logo {
+      margin-bottom: 10px;
+    }
+    &__img-title {
+      font-size: 20px;
+      line-height: 20px;
+    }
+    &__img-subtitle {
+      line-height: 10px;
+    }
+    &__img-text {
+      line-height: 10px;
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .info {
+    &__contacts {
+      &-title {
+        font-size: 45px;
+        line-height: 50px;
+      }
+    }
+  }
+}
+
 @media (max-width: 815px) {
   .menu {
     &__item {
@@ -341,6 +399,12 @@ li {
     &__link-buy {
       padding: 10px 15px;
       font-size: 10px;
+    }
+  }
+  .promo {
+    &__inner {}
+    &__title {
+      font-size: 50px;
     }
   }
 }
@@ -354,6 +418,7 @@ li {
     &__list {
       display: none;
     }
+    //анимация кнопки меню
     &__btn {
       position: relative;
       flex-direction: column;
@@ -398,6 +463,7 @@ li {
         }
       }
     }
+    //анимация открытия меню
     &__mobile.menu--open {
       display: flex;
       transform: translateX(0);
@@ -428,6 +494,88 @@ li {
       }
     }
   }
+  .pages {
+    &__inner {
+      padding: 100px 0;
+    }
+    &__img-column {
+      grid-template-columns: 1fr;
+    }
+  }
+  .services {
+    &__column {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
+
+@media(max-width: 650px) {
+  .info {
+    &__contacts {
+      &-title {
+        font-size: 35px;
+      }
+      &-text {
+        font-size: 11px;
+      }
+    }
+    &__img {
+      margin-top: 35px;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .promo {
+    &__title {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+}
+
+@media (max-width: 544px) {
+  .info {
+    &__contacts {
+      &-title {
+        font-size: 30px;
+      }
+      &-text {
+        font-size: 7px;
+      }
+    }
+    &__img {
+      width: 300px;
+      height: 200px;
+      margin: 0;
+    }
+  }
+}
+
+@media(max-width: 470px) {
+  .promo {
+    &__title {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+  .pages {
+    &__title {
+      font-size: 45px;
+    }
+    &__img-column {
+      margin-top: 30px;
+    }
+  }
+  .contacts {
+    &__left,
+    &__right {
+      flex-direction: column;
+      gap: 25px 0;
+    }
+  }
 }
 
 @media (max-width: 440px) {
@@ -435,6 +583,17 @@ li {
     &__link-buy {
       padding: 5px 10px;
       font-size: 9px;
+    }
+  }
+  .pages {
+    &__img-column {
+      grid-template-columns: minmax(100px, 300px);
+    }
+    &__img {
+      padding: 20px 0;
+      &-item {
+        max-width: 100%;
+      }
     }
   }
 }
